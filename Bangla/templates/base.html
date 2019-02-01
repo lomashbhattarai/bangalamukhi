@@ -1,0 +1,83 @@
+{% load static %}
+<html>
+  <head>
+    <title> {% block title %} WOODS {% endblock %} </title>
+    <!-- Latest compiled and minified CSS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+
+<nav class="navbar navbar-inverse" >
+  <div class="container-fluid">
+<!--  logo-->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href={% url "home" %} class="navbar-brand">Banglamukhi furnitures </a>
+    </div>
+    <div>
+
+  </div>
+
+    <div class="collapse navbar-collapse" id="mainNavBar">
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#"> Home</a></li> -->
+        <!-- <li class="active"><a href="#"> About</a></li> -->
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">dropdown<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">opdtion</a></li>
+            <li><a href="#">opdtion</a></li>
+            <li><a href="#">opdtion</a></li>
+          </ul>
+        </li> -->
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        {% if user %}
+
+      <li> <a href="#"> hello, {{user}} </a></li>
+      <li> <a href="{% url "logout" %}"> Logout </a></li>
+
+        {% else %}
+
+        <li><a href="{% url "login" %}">Login</a></li>
+        <li><a href="{% url "signup" %}">Signup</a></li>
+{% endif %}
+        <li class="active"><a href="#"> Contact</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+
+</nav>
+
+{% block body %}
+
+{% endblock %}
+
+<footer class="page-footer ">
+  <div class="container-fluid bg-success text-center text-md-right text-muted">
+    <div class="row">
+      <div class="">
+        <h5> You are our valued customer</h5>
+        <h5> contact us @ </h5>
+      </div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

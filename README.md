@@ -5,6 +5,7 @@ A minimalist website for Online Furniture Shopping
 
 
 First, clone the repository:
+https://github.com/lomashbhattarai/bangalamukhi.git
 
 Install the requirements:
 

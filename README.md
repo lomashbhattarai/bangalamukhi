@@ -9,8 +9,11 @@ https://github.com/lomashbhattarai/bangalamukhi.git
 
 Install the requirements:
 
+```bash
 pip install -r requirements.txt
-
+```
 Finally, run the development server:
 
+```bash
 python manage.py runserver
+```

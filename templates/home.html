@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title%} Home {% endblock %}
+{% block body %}
+
+<div class="container-fluid ">
+    <h1> Items</h1>
+
+
+    {% for item in items %}
+
+<div class="row">
+  <div class="col-md-4">
+    <img class="img-responsive" src="{{item.image.url}}" height="200px"></img>
+  </div>
+
+  <div class="col-md-4">
+    <table class="table table-striped" style="margin-top:92px;">
+      <thead></thead>
+      <tbody>
+        <tr>
+          <td> Name:</td>
+          <td>{{item.name}}</td>
+        </tr>
+        <tr>
+          <td>Price:</td>
+          <td>{{item.marked_price}}</td>
+        </tr>
+        <tr>
+          <td>description:</td>
+          <td>{{item.description}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-4" style="margin-top:92px;">
+      <a href= {% url "detail" item.id %}><button type="button" class="btn btn-primary" > See Details </button> </a>
+       <a href={% url "buy" item.id %}><button type="button" class="btn btn-primary" > BUY </button> </a>
+        <a href="#"><button type="button" class="btn btn-primary disabled" > Add To Cart </button></a>
+  </div>
+</div>
+    {% endfor %}
+  </div>
+
+
+{% endblock %}

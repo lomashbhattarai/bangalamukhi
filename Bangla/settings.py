@@ -27,6 +27,7 @@ SECRET_KEY = '^gto^=)79t0hjo27@v4e_)ta)+(6f_w4u@0c6#h&@_fik5^k*)'
 DEBUG = True
 
 ALLOWED_HOSTS = ['bangalamukhi.herokuapp.com']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -126,7 +127,7 @@ PROJECT_ROOT  = os.path.join(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS= [os.path.join(BASE_DIR,'static'),]
+STATICFILES_DIRS= [os.path.join(BASE_DIR,'static'),os.path.join(BASE_DIR, 'media'), os.path.join(BASE_DIR,'media/images')]
 STATICFILES_STORATGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL="/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
